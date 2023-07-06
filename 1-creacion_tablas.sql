@@ -14,8 +14,8 @@ CREATE TABLE IF NOT EXISTS producto (
 -- Crea la tabla "Clientes" con al menos los campos: "id" (clave primaria), "nombre", "correo", "dirección".
 CREATE TABLE IF NOT EXISTS cliente (
     cliente_id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(45) NOT NULL,
-    correo VARCHAR(45),
+    nombre VARCHAR(100) NOT NULL,
+    correo VARCHAR(255),
     direccion VARCHAR(45) NOT NULL
 );
 

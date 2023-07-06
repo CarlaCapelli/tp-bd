@@ -3,10 +3,7 @@ DELIMITER //
 CREATE TRIGGER actualizar_stock AFTER INSERT ON compra
 FOR EACH ROW
 BEGIN
-    DECLARE producto_stock INT;
-    SET producto_stock = (SELECT stock FROM producto WHERE producto_id = NEW.producto_id);
-    SET producto_stock = producto_stock - NEW.cantidad;
-    UPDATE producto SET stock = producto_stock WHERE producto_id = NEW.producto_id;
+  UPDATE producto SET stock = stock - NEW.cantidad WHERE producto_id = NEW.producto_id;
 END//
 DELIMITER ;
 
